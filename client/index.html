@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LiveKit Voice Agent</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Voice Agent</h1>
+    <p class="subtitle">Collect your name, age, and place via a short voice call.</p>
+
+    <div id="status" class="status" aria-live="polite">Ready</div>
+
+    <div class="actions">
+      <button id="btn-start" type="button" class="btn btn-primary">Start call</button>
+      <button id="btn-end" type="button" class="btn btn-secondary" hidden>End call</button>
+      <button id="btn-start-audio" type="button" class="btn btn-audio" style="display:none;">Start Audio</button>
+    </div>
+
+    <p class="hint">Make sure your microphone is allowed. The agent will ask for your name, age, and place, then say thank you and end the call.</p>
+    <p class="hint hint-audio">If you don’t hear the agent, click <strong>Start Audio</strong> above.</p>
+    <!-- Agent voice: single audio element (demo pattern: attach track to existing element) -->
+    <div id="remote-audio-container" aria-hidden="true" style="position:absolute;left:-9999px;width:0;height:0;overflow:hidden;">
+      <audio id="agent-audio" playsinline></audio>
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/livekit-client@2/dist/livekit-client.umd.min.js"></script>
+  <script src="/assets/app.js"></script>
+</body>
+</html>
