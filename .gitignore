@@ -51,5 +51,12 @@ Thumbs.db
 *.log
 .cursor/debug.log
 
-# Optional: uncomment if you add Node tooling for the client
-# node_modules/
+# Node.js
+/node-server/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.eslintcache
+*.tsbuildinfo
+node_modules/

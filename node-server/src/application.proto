@@ -1,0 +1,15 @@
+syntax="proto-3"
+
+package ApplicationOne;
+
+service Application{
+    rpc SayHello(SayHelloParam) returns (SayHelloResponse);
+}
+
+message SayHelloParam{
+    string name = 1;
+}
+
+message SayHelloResponse{
+    string message  = 1;
+}
