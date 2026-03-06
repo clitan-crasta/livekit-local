@@ -8,6 +8,16 @@ A voice call app. The agent asks for your **name**, **age**, and **place**, save
 - **Python 3.10+**
 - Something that accepts the saved data at `http://localhost:4000/save`
 
+### Install LiveKit (local)
+
+Install the LiveKit server once, then run it with `livekit-server --dev`.
+
+- **macOS**: `brew install livekit`
+- **Linux**: `curl -sSL https://get.livekit.io | bash`
+- **Windows**: Download the binary from [LiveKit releases](https://github.com/livekit/livekit/releases/latest)
+
+Then start it: `livekit-server --dev`. It will use API key `devkey` and secret `secret` and listen on port 7880.
+
 ## What’s in this repo
 
 | Folder        | What it does |
@@ -55,6 +65,11 @@ A voice call app. The agent asks for your **name**, **age**, and **place**, save
 
 **Server** (`server/.env`): LiveKit URL and API key/secret. Copy from `server/.env.example`.
 
+### Where to get the API keys
+
+- **GOOGLE_API_KEY** (for the agent’s voice AI): Go to [Google AI Studio](https://aistudio.google.com/apikey), sign in, click “Create API key”, and copy it into `agent/.env`.
+- **DEEPGRAM_API_KEY** (for speech-to-text and text-to-speech): Go to [Deepgram](https://console.deepgram.com/), sign up or sign in, open “API Keys”, create a key, and copy it into `agent/.env`.
+
 ## What the agent sends to your API
 
 `POST http://localhost:4000/save` with JSON:
@@ -68,3 +83,14 @@ A voice call app. The agent asks for your **name**, **age**, and **place**, save
 ```
 
 Any 2xx response means success. The response body can be anything.
+
+---
+
+## References
+
+- [LiveKit](https://livekit.io/) – real-time communication platform  
+- [LiveKit docs](https://docs.livekit.io/) – guides and API  
+- [LiveKit server (self-host)](https://docs.livekit.io/home/self-hosting/local) – run LiveKit locally  
+- [LiveKit Agents](https://docs.livekit.io/agents/) – voice/LLM agents  
+- [Google AI Studio](https://aistudio.google.com/) – Gemini API keys  
+- [Deepgram](https://deepgram.com/) – speech-to-text and text-to-speech
